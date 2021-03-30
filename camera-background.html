@@ -1,0 +1,81 @@
+<html>
+<header>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .demo model-viewer {
+            width: 100%;
+            height: 100%;
+            background-color: #eee;
+        }
+        .video {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    
+    <script type="text/javascript">
+        // 建立一個監聽事件 （事件名稱 ，要執行的function, useCapture)  
+        window.addEventListener("DOMContentLoaded", function() {
+            // Grab elements, create settings, etc.  
+            var video = document.getElementById("video"),
+                videoObj = {
+                    video: true,
+                    audio: false
+                },
+                errBack = function(error) {
+                    console.log("Video capture error: ", error.code);
+                };
+            // 依據Browser不同使用不同的API          
+            if (navigator.getUserMedia) { // Standard  
+                navigator.getUserMedia(videoObj, function(stream) {
+                    video.src = stream;
+                    video.play();
+                }, errBack);
+            } else if (navigator.webkitGetUserMedia) { // WebKit-prefixed  
+                navigator.webkitGetUserMedia(videoObj, function(stream) {
+                    video.src = window.webkitURL.createObjectURL(stream);
+                    video.play();
+                }, errBack);
+            } else if (navigator.mozGetUserMedia) { // Firefox-prefixed  
+                navigator.mozGetUserMedia(videoObj, function(stream) {
+                    video.src = window.URL.createObjectURL(stream);
+                    video.play();
+                }, errBack);
+            } else if (navigator.msGetUserMedia) {
+                navigator.msGetUserMedia(videoObj, function(stream) {
+                    video.src = window.URL.createObjectURL(stream);
+                    video.play();
+                }, errBack);
+            }
+        }, false);
+    </script>
+</header>
+
+<body>
+    <div class="demo" style="background: linear-gradient(#ffffff, #ada996); overflow-x: hidden;">
+        <video id="video" autoplay></video>
+        
+        <!--Use it like any other HTML element -->
+        <!--TODO: src=xxxx 放 .glb -->
+        <!--TODO: ios-src=xxxx 放 .usdz -->
+        <model-viewer src="model/ttt.glb" 
+                      alt="A 3D model of an astronaut" 
+                      style="background-color: unset;"
+                      ar ar-modes="webxr scene-viewer quick-look" 
+                      ar-scale="auto" 
+                      quick-look-browsers="safari chrome" 
+                      ios-src="model/ttt.usdz"
+                      camera-controls />
+    </div>
+
+    <!-- Loads <model-viewer> for modern browsers: -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js">
+    </script>
+
+    <!-- Loads <model-viewer> for old browsers like IE11: -->
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
+    </script>
+</body>
+
+</html>
