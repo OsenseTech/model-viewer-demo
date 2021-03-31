@@ -6,23 +6,24 @@
         .demo model-viewer {
             width: 100%;
             height: 100%;
-            background-color: #eee;
         }
     </style>
 </header>
 
-<body>
-    <div class="demo">
+<body style="background-color: beige">
+    
+    <div class="demo" style="background-color: transparent">
         <!--Use it like any other HTML element -->
         <!--TODO: src=xxxx 放 .glb -->
         <!--TODO: ios-src=xxxx 放 .usdz -->
         <model-viewer src="model/ttt.glb" 
                       alt="A 3D model of an astronaut" 
+                      style="background-color: unset;"
                       ar ar-modes="webxr scene-viewer quick-look" 
                       ar-scale="auto" 
                       quick-look-browsers="safari chrome" 
                       ios-src="model/ttt.usdz"
-                      auto-rotate camera-controls />
+                      camera-controls />
     </div>
 
     <!-- Loads <model-viewer> for modern browsers: -->
