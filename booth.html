@@ -13,32 +13,29 @@
     <title>Hello, world!</title>
 
     <style type="text/css">
-        .modal-dialog,
-        .modal-content {
-            height: 80%;
-        }
-
-        .modal-content {
-            background-color: rgb(255, 255, 255, 0.8);
-        }
-
-        .modal-dialog model-viewer {
-            height: 100%;
+        model-viewer {
+            /* margin: auto;*/
             width: 100%;
+            height: 70vh;
         }
 
         body {
             background-color: rgb(247, 243, 193);
         }
+
+        .modal-content {
+            background-color: rgb(255, 255, 255, 0.75);
+        }
     </style>
 </head>
 
 <body>
-    <h1>Hello, world!</h1>
+    <!-- Phone call -->
+    <h3><a href="tel:+886-2-8771-7175">(02) 8771-7175</a></h3>
 
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-        Launch demo modal
+        Click Me!
     </button>
 
     <!-- Modal -->
@@ -47,15 +44,15 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalCenterTitle">model-viewer</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <model-viewer src="model/1M_Cube.glb" alt="A 3D model of an astronaut"
-                        ar-modes="webxr scene-viewer quick-look" ar-scale="fixed" ios-src="model/1M_Cube.usdz"
-                        quick-look-browsers="safari chrome" ar auto-rotate camera-controls />
+                    <model-viewer src="model/ttt.glb" alt="A 3D model of an astronaut" style="background-color: unset;"
+                        ar-modes="webxr scene-viewer quick-look" ar-scale="auto" quick-look-browsers="safari chrome"
+                        ios-src="model/ttt.usdz" ar auto-rotate camera-controls />
                 </div>
             </div>
         </div>
