@@ -1,0 +1,30 @@
+<html>
+<header>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="my-style.css"/>
+</header>
+
+<body style="background-color: beige">
+
+    <div class="demo" style="background-color: transparent">
+        <!--Use it like any other HTML element -->
+        <!--TODO: src=xxxx 放 .glb -->
+        <!--TODO: ios-src=xxxx 放 .usdz -->
+        <model-viewer src="model/Osleepy.glb" alt="A 3D model of an astronaut" style="background-color: unset;" ar
+            ar-modes="webxr scene-viewer quick-look" ar-scale="auto" quick-look-browsers="safari chrome"
+            ios-src="model/Osleepy.usdz" auto-rotate camera-controls>
+            <button slot="ar-button" id="ar-button" type="button" class="btn btn-circle btn-sm">AR</button>
+        </model-viewer>
+    </div>
+
+    <!-- Loads <model-viewer> for modern browsers: -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js">
+    </script>
+
+    <!-- Loads <model-viewer> for old browsers like IE11: -->
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
+    </script>
+</body>
+
+</html>
