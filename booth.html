@@ -33,6 +33,12 @@
             background-color: rgb(255, 255, 255, 0.75);
         }
     </style>
+
+    <script type="text/javascript">
+        function showModelViewerInModal() {
+            $('#exampleModalCenter').modal('show');
+        }
+    </script>
 </head>
 
 <body>
@@ -40,7 +46,7 @@
     <h3><a href="tel:+886-2-8771-7175">(02) 8771-7175</a></h3>
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    <button type="button" class="btn btn-primary" onclick="showModelViewerInModal()">
         Click Me!
     </button>
 
