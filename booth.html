@@ -53,12 +53,18 @@
         function showModelViewerInModal() {
             $('#exampleModalCenter').modal('show');
         }
+        function phoneCall() {
+            window.open('tel:+886-2-8771-7175', '_self');
+        }
     </script>
 </head>
 
 <body>
     <!-- Phone call -->
-    <h3><a href="tel:+886-2-8771-7175">(02) 8771-7175</a></h3>
+    <button type="button" class="btn btn-primary" onclick="phoneCall()">
+        Call Me!
+    </button>
+    <!-- <h3><a href="tel:+886-2-8771-7175">(02) 8771-7175</a></h3> -->
 
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" onclick="showModelViewerInModal()">
