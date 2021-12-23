@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="mystyle.css"/>
+</head>
+
+<body style="background-color: beige">
+
+    <div class="demo" style="background-color: transparent">
+        <!--Use it like any other HTML element -->
+        <model-viewer src="https://modelviewer.dev/assets/Canoe.glb" alt="A 3D model of an astronaut" style="background-color: unset;" ar
+            ar-modes="webxr scene-viewer" ar-scale="auto" quick-look-browsers="safari chrome"
+            auto-rotate camera-controls>
+        </model-viewer>
+    </div>
+
+    <!-- Loads <model-viewer> for modern browsers: -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js">
+    </script>
+</body>
+
+</html>
